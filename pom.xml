@@ -2,12 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>eureka</module>
+    </modules>
+    <!--父模块信息-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.hualixy</groupId>
     <artifactId>online</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -16,7 +22,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2020.0.0-SNAPSHOT</spring-cloud.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -33,6 +39,7 @@
     </dependencies>
 
     <dependencyManagement>
+        <!--springcloud的依赖管理-->
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -47,13 +54,14 @@
     <build>
         <plugins>
             <plugin>
+                <!--Mavean的插件-->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
 
-    <repositories>
+   <!-- <repositories>
         <repository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
@@ -67,6 +75,6 @@
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
         </repository>
-    </repositories>
+    </repositories>-->
 
 </project>
