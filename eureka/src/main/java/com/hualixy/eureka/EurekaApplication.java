@@ -1,13 +1,13 @@
-package com.hualixy.online;
+package com.hualixy.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OnlineApplication {
+public class EurekaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OnlineApplication.class, args);
+        SpringApplication.run(EurekaApplication.class, args);
     }
 
 }
