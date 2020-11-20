@@ -6,6 +6,7 @@
     <modules>
         <module>eureka2</module>
         <module>system2</module>
+        <module>gateway2</module>
 
     </modules>
     <!--父模块信息-->
