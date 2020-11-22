@@ -1,0 +1,29 @@
+server:
+  port: 9000
+
+
+spring:
+  application:
+    name: gateway
+
+  ## 网关路由配置
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      defaultFilters:
+        - PreserveHostHeader
+      routes:
+        - id: system
+          uri: http://127.0.0.1:9001
+          predicates:
+            - Path=/system/customer/**
+          filters:
+            - StripPrefix=1
+
+  #客户端设置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/  #注册中心地址

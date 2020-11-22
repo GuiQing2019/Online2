@@ -1,5 +1,6 @@
 package com.hualixy.system2.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 /** 
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 * @Author: GuiQingChen
 * @Date: 2020/11/20
  */
+
 @RestController
+@RequestMapping(value = "customer")
 public class TestController {
 
    /**
@@ -21,7 +24,7 @@ public class TestController {
    * @Author: GuiQingChen
    * @Date: 2020/11/20
     */
-    @RequestMapping("/test")
+    @GetMapping(value = "test")
     public String test(){
         return "succeed";
     }
