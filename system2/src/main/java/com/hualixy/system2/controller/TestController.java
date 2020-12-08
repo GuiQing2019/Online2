@@ -1,9 +1,17 @@
 package com.hualixy.system2.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.hualixy.system2.domain.Test;
+import com.hualixy.system2.service.TestService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-/** 
+
+import java.util.List;
+
+/**
 * @Description:
  *              @RestController = @RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用
  *                 返回的是jsp的是controller层的字符内容。
@@ -14,18 +22,23 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = "customer")
+@ResponseBody
 public class TestController {
 
-   /**
-   * @Description: test方法
-   * @Param: []
-   * @return: java.lang.String
-   * @Author: GuiQingChen
-   * @Date: 2020/11/20
-    */
-    @GetMapping(value = "test")
-    public String test(){
-        return "succeed";
+    private static final Logger LOG= LoggerFactory.getLogger(TestController.class);
+
+
+    @Autowired
+    public TestService testService;
+
+    @RequestMapping("/test")
+    public List<Test> test(){
+        LOG.info("controller..");
+        return testService.list();
+    }
+
+    @RequestMapping("/test1")
+    public String test1(){
+        return "success";
     }
 }

@@ -6,10 +6,19 @@ server:
 spring:
   application:
     name: system
-
+  datasource:
+    url: jdbc:mysql://139.196.110.93:3306/online?characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/  #注册中心地址
+      defaultZone: http://127.0.0.1:8762/eureka/  #注册中心地址
 
 
+
+## 导入Mybatis.xml文件
+mybatis:
+  mapper-locations:
+    classpath: com/hualixy/system2/mapper/*.xml

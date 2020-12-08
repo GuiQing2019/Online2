@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hualixy.system2.mapper.TestMapper">
+
+    <!-- 1.查询所有员工信息 id值为对应接口中方法的名字 -->
+    <select id="list" resultType="com.hualixy.system2.domain.Test">
+        select * from test
+    </select>
+
+</mapper>

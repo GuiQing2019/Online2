@@ -1,6 +1,7 @@
 package com.hualixy.system2;
 
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +12,7 @@ import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 @EnableEurekaClient
+@MapperScan("com.hualixy.system2.mapper")
 public class System2Application {
 
 private static final Logger LOG= LoggerFactory.getLogger(System2Application.class);
