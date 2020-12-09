@@ -22,3 +22,7 @@ eureka:
 mybatis:
   mapper-locations:
     classpath: com/hualixy/system2/mapper/*.xml
+
+logging:
+  level:
+    com.hualixy.system2.mapper: trace
